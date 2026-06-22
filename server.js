@@ -34,9 +34,9 @@ app.post('/api/ai', async (req, res) => {
   }
 });
 
-// Serve the SOP page at root
+// Serve framework homepage at root
 app.get('/', (_req, res) => {
-  res.sendFile(path.join(__dirname, 'fb-ads-sop.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
