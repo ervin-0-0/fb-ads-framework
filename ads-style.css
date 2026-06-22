@@ -118,10 +118,11 @@ img{max-width:100%;display:block}
   letter-spacing:-.06em;color:rgba(0,0,0,.04);
   position:absolute;right:0;top:-1.5rem;pointer-events:none;
 }
-.ph-label{margin-bottom:.85rem}
+.ph-label{margin-bottom:1.2rem}
+.ph-label .sec-label{font-size:.84rem;letter-spacing:.15em}
 .ph-title{
   font-family:'Syne','Noto Sans TC',sans-serif;font-weight:800;
-  font-size:clamp(2rem,5vw,4rem);line-height:1.0;
+  font-size:clamp(4rem,10vw,8rem);line-height:1.0;
   letter-spacing:-.03em;margin-bottom:1.1rem;
 }
 .ph-desc{color:var(--muted);max-width:560px;line-height:1.85;font-size:.72rem}
