@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gate 05 · 分享 — 廣告五門</title>
+<link rel="stylesheet" href="ads-style.css">
+<style>
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 60% 70% at 80% 30%,rgba(26,158,82,.07) 0%,transparent 55%),var(--bg);
+}
+.angle-card{
+  background:var(--card);border:1px solid var(--b);border-radius:14px;
+  padding:1.75rem 2rem;transition:border-color .2s;
+}
+.angle-card:hover{border-color:var(--share)}
+.angle-num{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:3rem;
+  line-height:.85;letter-spacing:-.04em;color:rgba(84,212,140,.12);margin-bottom:.75rem;
+}
+.angle-title{
+  font-family:'Space Mono',monospace;font-size:.55rem;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--share);margin-bottom:1rem;
+}
+.angle-list{list-style:none}
+.angle-list li{
+  padding:.4rem 0;border-bottom:1px solid var(--b);
+  font-size:.83rem;color:var(--muted);display:flex;align-items:baseline;gap:.6rem;
+}
+.angle-list li:last-child{border-bottom:none}
+.angle-list li::before{content:'–';color:var(--share);flex-shrink:0;font-size:.65rem}
+.tip-box{
+  background:rgba(84,212,140,.06);border:1px solid rgba(84,212,140,.18);
+  border-radius:14px;padding:2rem 2.25rem;margin-top:3rem;
+}
+.tip-label{
+  font-family:'Space Mono',monospace;font-size:.52rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--share);margin-bottom:.75rem;
+}
+.tip-box p{font-size:.88rem;color:var(--muted);line-height:1.85}
+/* Journey complete banner */
+.complete-banner{
+  background:linear-gradient(135deg,rgba(84,212,140,.12) 0%,rgba(0,212,138,.06) 100%);
+  border:1px solid rgba(84,212,140,.22);border-radius:20px;
+  padding:3rem 3.5rem;text-align:center;
+}
+.cb-icon{font-size:3rem;margin-bottom:1rem}
+.cb-title{
+  font-family:'Syne','Noto Sans TC',sans-serif;font-weight:800;
+  font-size:2rem;letter-spacing:-.02em;margin-bottom:.75rem;
+}
+.cb-desc{color:var(--muted);font-size:.9rem;line-height:1.85;max-width:480px;margin:0 auto 2rem}
+/* Flywheel */
+.flywheel{
+  display:flex;align-items:center;justify-content:center;
+  gap:0;flex-wrap:wrap;padding:2rem 0;
+}
+.fw-step{
+  text-align:center;padding:1.25rem 1.5rem;
+  display:flex;flex-direction:column;align-items:center;gap:.4rem;
+}
+.fw-dot{width:10px;height:10px;border-radius:50%;margin:0 auto .5rem}
+.fw-num{font-family:'Space Mono',monospace;font-size:.5rem;letter-spacing:.12em;color:var(--dim)}
+.fw-name{font-size:.88rem;font-weight:600}
+.fw-arrow{color:var(--dim);font-size:1.1rem;align-self:center;padding:.5rem}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">四大受眾<span class="g"> × </span>廣告五門</a>
+  <ul class="nav-links">
+    <li><a href="index.html">首頁</a></li>
+    <li><a href="audiences.html">四大受眾</a></li>
+    <li><a href="gate-know.html" class="cur">廣告五門</a></li>
+  </ul>
+  <div class="nav-progress">
+    <div class="np-dot"></div>
+    <div class="np-dot"></div>
+    <div class="np-dot"></div>
+    <div class="np-dot"></div>
+    <div class="np-dot on"></div>
+  </div>
+</nav>
+
+<div class="gate-bar" style="margin-top:64px">
+  <a href="gate-know.html" class="gb-item done"><div class="gb-dot"></div>01 認識</a>
+  <div class="gb-arrow">→</div>
+  <a href="gate-interact.html" class="gb-item done"><div class="gb-dot"></div>02 互動</a>
+  <div class="gb-arrow">→</div>
+  <a href="gate-buy.html" class="gb-item done"><div class="gb-dot"></div>03 購買</a>
+  <div class="gb-arrow">→</div>
+  <a href="gate-rebuy.html" class="gb-item done"><div class="gb-dot"></div>04 重複購買</a>
+  <div class="gb-arrow">→</div>
+  <div class="gb-item active"><div class="gb-dot"></div>05 分享</div>
+</div>
+
+<div class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="ph-wrap">
+    <div class="ph-num" style="color:rgba(84,212,140,.05)">05</div>
+    <div class="ph-label"><span class="sec-label" style="color:var(--share)">Gate 05 · Share</span></div>
+    <h1 class="ph-title">讓他們<br><span style="color:var(--share)">告訴朋友</span></h1>
+    <p class="ph-desc">最強大的廣告從來不是你花錢買的，而是滿意客戶主動幫你說的那句話。建立分享機制，把每個老客戶都變成你的品牌大使。</p>
+  </div>
+</div>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-label" style="color:var(--share)">Creative Angles</div>
+      <h2 class="sec-h">分享門的激勵機制</h2>
+      <p class="sec-desc">分享不會自然發生，需要設計清楚的誘因和流程，讓客戶知道「分享對我有什麼好處」。</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
+      <div class="angle-card fade d1">
+        <div class="angle-num">A</div>
+        <div class="angle-title">空瓶回饋方案</div>
+        <ul class="angle-list">
+          <li>屬於你的空瓶賞，送優惠券</li>
+          <li>空瓶打卡分享拿積點</li>
+          <li>空瓶回收環保計畫</li>
+          <li>集滿三瓶換正品乙瓶</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d2">
+        <div class="angle-num">B</div>
+        <div class="angle-title">老客戶分享心得</div>
+        <ul class="angle-list">
+          <li>老客戶回購，分享心得拿更多</li>
+          <li>IG 打卡標記品牌送小禮</li>
+          <li>好評留言送下次購買折扣</li>
+          <li>圖片心得優先展示在官網</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d3">
+        <div class="angle-num">C</div>
+        <div class="angle-title">訂閱推薦方案</div>
+        <ul class="angle-list">
+          <li>訂閱購買 3 個月，好膚況輕鬆養</li>
+          <li>訂閱一年再送一套給朋友</li>
+          <li>推薦新朋友雙方都享優惠</li>
+          <li>訂閱戶推薦享更高回饋比例</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d4">
+        <div class="angle-num">D</div>
+        <div class="angle-title">社群素人計畫</div>
+        <ul class="angle-list">
+          <li>徵選 100 位品牌大使</li>
+          <li>提供免費試用換真實心得</li>
+          <li>大使專屬折扣碼分享給好友</li>
+          <li>優秀大使獲得品牌合作機會</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip-box fade">
+      <div class="tip-label">策略提示</div>
+      <p>分享門的廣告本質上是投放給「已購客戶」，用廣告告訴他們「推薦朋友的好處」。最有效的切入點是讓分享這件事感覺像是「讓朋友得到好處」，而不是「幫品牌打廣告」。用「送朋友一套」的框架代替「推薦朋友給你優惠」，轉換率通常高出許多。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FLYWHEEL -->
+<section class="sec sec-dark">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-label" style="color:var(--share)">The Full Loop</div>
+      <h2 class="sec-h">分享讓飛輪持續轉動</h2>
+      <p class="sec-desc">分享門不是終點，而是把新受眾帶回認識門的入口。每一個成功的分享，都為品牌創造下一輪的認識循環。</p>
+    </div>
+    <div class="flywheel fade">
+      <div class="fw-step">
+        <div class="fw-dot" style="background:#7c6eff"></div>
+        <div class="fw-num">01</div>
+        <div class="fw-name" style="color:#7c6eff">認識</div>
+      </div>
+      <div class="fw-arrow">→</div>
+      <div class="fw-step">
+        <div class="fw-dot" style="background:var(--accent)"></div>
+        <div class="fw-num">02</div>
+        <div class="fw-name" style="color:var(--accent)">互動</div>
+      </div>
+      <div class="fw-arrow">→</div>
+      <div class="fw-step">
+        <div class="fw-dot" style="background:var(--buy)"></div>
+        <div class="fw-num">03</div>
+        <div class="fw-name" style="color:var(--buy)">購買</div>
+      </div>
+      <div class="fw-arrow">→</div>
+      <div class="fw-step">
+        <div class="fw-dot" style="background:var(--rebuy)"></div>
+        <div class="fw-num">04</div>
+        <div class="fw-name" style="color:var(--rebuy)">重複購買</div>
+      </div>
+      <div class="fw-arrow">→</div>
+      <div class="fw-step">
+        <div class="fw-dot" style="background:var(--share)"></div>
+        <div class="fw-num">05</div>
+        <div class="fw-name" style="color:var(--share)">分享</div>
+      </div>
+      <div class="fw-arrow" style="color:var(--share)">↩</div>
+    </div>
+    <p style="text-align:center;font-size:.82rem;color:var(--dim)">分享帶來新受眾 → 回到認識門 → 飛輪持續加速</p>
+  </div>
+</section>
+
+<!-- COMPLETE -->
+<section class="sec">
+  <div class="wrap">
+    <div class="complete-banner fade">
+      <div class="cb-icon">🎯</div>
+      <div class="cb-title">框架學習完成</div>
+      <p class="cb-desc">你已經走完四大受眾 × 廣告五門的完整流程。現在回到首頁，開始規劃你的品牌廣告策略。</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="index.html" class="btn btn-g">回到首頁 →</a>
+        <a href="audiences.html" class="btn btn-o">重新看受眾</a>
+        <a href="gate-know.html" class="btn btn-o">從認識門開始</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-nav">
+  <a href="gate-rebuy.html" class="pn-link">
+    <span class="pn-tag">← 上一門</span>
+    <span class="pn-title">Gate 04 · 重複購買</span>
+  </a>
+  <a href="index.html" class="pn-link next">
+    <span class="pn-tag">回到 →</span>
+    <span class="pn-title">首頁總覽</span>
+  </a>
+</div>
+
+<footer class="footer">
+  <div class="footer-brand">四大受眾<span class="g"> × </span>廣告五門</div>
+  <div class="footer-links">
+    <a href="audiences.html">四大受眾</a>
+    <a href="gate-know.html">認識</a>
+    <a href="gate-interact.html">互動</a>
+    <a href="gate-buy.html">購買</a>
+    <a href="gate-rebuy.html">重複購買</a>
+    <a href="gate-share.html">分享</a>
+  </div>
+  <div class="footer-copy">Facebook Ads Framework</div>
+</footer>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');io.unobserve(x.target)}}),{threshold:.08});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

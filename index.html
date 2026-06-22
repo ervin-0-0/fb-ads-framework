@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>四大受眾 × 廣告五門 — Facebook Ads Framework</title>
+<link rel="stylesheet" href="ads-style.css">
+<style>
+/* Hero gradient */
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(0,153,96,.08) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 80% at 10% 80%,rgba(0,80,200,.05) 0%,transparent 55%),
+    var(--bg);
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:1;
+  background-image:linear-gradient(rgba(0,0,0,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,0,0,.04) 1px,transparent 1px);
+  background-size:72px 72px;
+}
+/* Overview cards */
+.ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.ov-card{
+  background:var(--card);border:1px solid var(--b);border-radius:20px;
+  padding:2.5rem 2.75rem;position:relative;overflow:hidden;
+}
+.ov-card-num{
+  position:absolute;right:1.5rem;top:.5rem;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:7rem;
+  line-height:.9;letter-spacing:-.06em;color:rgba(0,0,0,.05);
+  pointer-events:none;
+}
+.ov-card-icon{font-size:2rem;margin-bottom:1.25rem}
+.ov-card-title{
+  font-family:'Syne','Noto Sans TC',sans-serif;font-weight:800;
+  font-size:1.6rem;letter-spacing:-.02em;margin-bottom:.75rem;
+}
+.ov-card-desc{color:var(--muted);font-size:.85rem;line-height:1.85;max-width:340px}
+.ov-link{
+  display:inline-flex;align-items:center;gap:.4rem;
+  margin-top:1.75rem;font-size:.8rem;font-weight:700;color:var(--accent);
+}
+.ov-link svg{transition:transform .2s}
+.ov-link:hover svg{transform:translateX(4px)}
+/* Funnel */
+.funnel{display:flex;align-items:stretch;gap:0;border:1px solid var(--b);border-radius:16px;overflow:hidden}
+.funnel-step{
+  flex:1;padding:2rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;
+  border-right:1px solid var(--b);position:relative;transition:background .2s;cursor:default;
+}
+.funnel-step:last-child{border-right:none}
+.funnel-step:hover{background:var(--s2)}
+.f-num{font-family:'Space Mono',monospace;font-size:.5rem;letter-spacing:.15em;color:var(--dim);margin-bottom:.25rem}
+.f-name{font-family:'Syne','Noto Sans TC',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:-.01em}
+.f-desc{font-size:.75rem;color:var(--muted);line-height:1.65}
+.f-dot{width:8px;height:8px;border-radius:50%;position:absolute;top:1.5rem;right:1.5rem}
+/* Color accents per gate */
+.fk .f-name{color:#7c6eff}.fk .f-dot{background:#7c6eff}
+.fi .f-name{color:var(--accent)}.fi .f-dot{background:var(--accent)}
+.fb .f-name{color:#ffb454}.fb .f-dot{background:#ffb454}
+.fr .f-name{color:#ff6b6b}.fr .f-dot{background:#ff6b6b}
+.fs .f-name{color:#54d48c}.fs .f-dot{background:#54d48c}
+/* Process steps */
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--b)}
+.step{background:var(--bg);padding:2.5rem 2.75rem;counter-increment:step;position:relative;overflow:hidden}
+.step::before{
+  content:counter(step,'0');
+  font-family:'Syne',sans-serif;font-weight:800;font-size:5rem;
+  line-height:.85;letter-spacing:-.05em;color:rgba(0,0,0,.05);
+  position:absolute;right:1rem;top:.5rem;
+}
+.step-h{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.step-p{font-size:.82rem;color:var(--muted);line-height:1.8}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">四大受眾<span class="g"> × </span>廣告五門</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="cur">首頁</a></li>
+    <li><a href="audiences.html">四大受眾</a></li>
+    <li><a href="gate-know.html">廣告五門</a></li>
+  </ul>
+  <a href="audiences.html" class="btn btn-g">開始使用 →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-ghost">KNOW<br>BUY<br>WIN</div>
+  <div class="hero-content">
+    <div class="hero-label">Facebook Ads Framework</div>
+    <h1 class="hero-h">找對人<br>說對話<br>贏得<span class="g">轉換</span></h1>
+    <p class="hero-desc">四大受眾 × 廣告五門，一套系統化框架幫你規劃臉書廣告投放策略，從陌生受眾到品牌大使，每個階段都有清晰的素材方向。</p>
+    <div class="hero-actions">
+      <a href="audiences.html" class="btn btn-g">認識四大受眾 →</a>
+      <a href="gate-know.html" class="btn btn-o">直接看廣告五門</a>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-label ga">Framework Overview</div>
+      <h2 class="sec-h">兩個核心工具</h2>
+      <p class="sec-desc">這套框架由兩個部分組成，先找到對的人，再在對的時機說對的話。</p>
+    </div>
+    <div class="ov-grid">
+      <div class="card ov-card fade d1">
+        <div class="ov-card-num">01</div>
+        <div class="ov-card-icon">👥</div>
+        <div class="ov-card-title">四大受眾</div>
+        <p class="ov-card-desc">根據 Facebook 興趣標籤，把潛在客群分為四種人：在乎肌膚、購物習慣、美食、旅遊。每種人有不同的心理狀態與購買動機。</p>
+        <a href="audiences.html" class="ov-link">了解受眾分類 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="card ov-card fade d2">
+        <div class="ov-card-num">02</div>
+        <div class="ov-card-icon">🚪</div>
+        <div class="ov-card-title">廣告五門</div>
+        <p class="ov-card-desc">消費者的五個決策階段：認識 → 互動 → 購買 → 重複購買 → 分享。每個門對應不同的廣告素材切角與溝通策略。</p>
+        <a href="gate-know.html" class="ov-link">進入廣告五門 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNNEL -->
+<section class="sec sec-dark">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-label ga">The 5 Gates</div>
+      <h2 class="sec-h">廣告五門流程</h2>
+      <p class="sec-desc">消費者從陌生到品牌大使，每個階段需要不同的素材策略。</p>
+    </div>
+    <div class="funnel fade">
+      <div class="funnel-step fk">
+        <div class="f-dot"></div>
+        <div class="f-num">GATE 01</div>
+        <a href="gate-know.html" style="color:inherit">
+          <div class="f-name">認識</div>
+        </a>
+        <div class="f-desc">讓陌生人第一次認識你的品牌</div>
+      </div>
+      <div class="funnel-step fi">
+        <div class="f-dot"></div>
+        <div class="f-num">GATE 02</div>
+        <a href="gate-interact.html" style="color:inherit">
+          <div class="f-name">互動</div>
+        </a>
+        <div class="f-desc">吸引受眾主動與品牌互動</div>
+      </div>
+      <div class="funnel-step fb">
+        <div class="f-dot"></div>
+        <div class="f-num">GATE 03</div>
+        <a href="gate-buy.html" style="color:inherit">
+          <div class="f-name">購買</div>
+        </a>
+        <div class="f-desc">對準生活情境，促成購買決策</div>
+      </div>
+      <div class="funnel-step fr">
+        <div class="f-dot"></div>
+        <div class="f-num">GATE 04</div>
+        <a href="gate-rebuy.html" style="color:inherit">
+          <div class="f-name">重複購買</div>
+        </a>
+        <div class="f-desc">用優惠與提醒讓舊客持續回購</div>
+      </div>
+      <div class="funnel-step fs">
+        <div class="f-dot"></div>
+        <div class="f-num">GATE 05</div>
+        <a href="gate-share.html" style="color:inherit">
+          <div class="f-name">分享</div>
+        </a>
+        <div class="f-desc">讓滿意客戶成為品牌大使</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-label ga">How To Use</div>
+      <h2 class="sec-h">三步驟開始</h2>
+    </div>
+    <div class="steps fade">
+      <div class="step">
+        <div class="step-h">Step 1 — 確認受眾</div>
+        <p class="step-p">找出你的品牌最適合的四大受眾，在 Facebook 廣告後台建立對應的興趣標籤受眾群組。</p>
+      </div>
+      <div class="step">
+        <div class="step-h">Step 2 — 規劃素材</div>
+        <p class="step-p">從認識門開始，依序為每個消費階段規劃廣告素材。每個門都有專屬的創意切角清單。</p>
+      </div>
+      <div class="step">
+        <div class="step-h">Step 3 — 配對投放</div>
+        <p class="step-p">把受眾與素材配對，建立廣告組測試，找出轉換率最高的組合後擴大預算。</p>
+      </div>
+    </div>
+    <div style="margin-top:3rem;display:flex;gap:1rem" class="fade">
+      <a href="audiences.html" class="btn btn-g">從受眾開始 →</a>
+      <a href="gate-know.html" class="btn btn-o">直接看五門</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">四大受眾<span class="g"> × </span>廣告五門</div>
+  <div class="footer-links">
+    <a href="audiences.html">四大受眾</a>
+    <a href="gate-know.html">認識</a>
+    <a href="gate-interact.html">互動</a>
+    <a href="gate-buy.html">購買</a>
+    <a href="gate-rebuy.html">重複購買</a>
+    <a href="gate-share.html">分享</a>
+  </div>
+  <div class="footer-copy">Facebook Ads Framework</div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); } });
+},{threshold:.1});
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

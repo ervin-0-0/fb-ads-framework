@@ -1,0 +1,15 @@
+{
+  "name": "fb-ads-sop",
+  "version": "1.0.0",
+  "description": "臉書廣告投放標準流程 SOP 工作表",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

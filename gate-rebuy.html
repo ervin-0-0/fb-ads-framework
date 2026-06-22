@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gate 04 · 重複購買 — 廣告五門</title>
+<link rel="stylesheet" href="ads-style.css">
+<style>
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 60% 70% at 80% 30%,rgba(200,48,42,.07) 0%,transparent 55%),var(--bg);
+}
+.angle-card{
+  background:var(--card);border:1px solid var(--b);border-radius:14px;
+  padding:1.75rem 2rem;transition:border-color .2s;
+}
+.angle-card:hover{border-color:var(--rebuy)}
+.angle-num{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:3rem;
+  line-height:.85;letter-spacing:-.04em;color:rgba(255,107,107,.12);margin-bottom:.75rem;
+}
+.angle-title{
+  font-family:'Space Mono',monospace;font-size:.55rem;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--rebuy);margin-bottom:1rem;
+}
+.angle-list{list-style:none}
+.angle-list li{
+  padding:.4rem 0;border-bottom:1px solid var(--b);
+  font-size:.83rem;color:var(--muted);display:flex;align-items:baseline;gap:.6rem;
+}
+.angle-list li:last-child{border-bottom:none}
+.angle-list li::before{content:'–';color:var(--rebuy);flex-shrink:0;font-size:.65rem}
+.tip-box{
+  background:rgba(255,107,107,.06);border:1px solid rgba(255,107,107,.18);
+  border-radius:14px;padding:2rem 2.25rem;margin-top:3rem;
+}
+.tip-label{
+  font-family:'Space Mono',monospace;font-size:.52rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--rebuy);margin-bottom:.75rem;
+}
+.tip-box p{font-size:.88rem;color:var(--muted);line-height:1.85}
+.stat-row{display:flex;gap:3rem;padding:3rem 0;border-top:1px solid var(--b);border-bottom:1px solid var(--b);margin:2.5rem 0}
+.stat-n{font-family:'Syne',sans-serif;font-weight:800;font-size:2.8rem;letter-spacing:-.03em;color:var(--rebuy)}
+.stat-l{font-size:.75rem;color:var(--dim);margin-top:.2rem}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">四大受眾<span class="g"> × </span>廣告五門</a>
+  <ul class="nav-links">
+    <li><a href="index.html">首頁</a></li>
+    <li><a href="audiences.html">四大受眾</a></li>
+    <li><a href="gate-know.html" class="cur">廣告五門</a></li>
+  </ul>
+  <div class="nav-progress">
+    <div class="np-dot"></div>
+    <div class="np-dot"></div>
+    <div class="np-dot"></div>
+    <div class="np-dot on"></div>
+    <div class="np-dot"></div>
+  </div>
+</nav>
+
+<div class="gate-bar" style="margin-top:64px">
+  <a href="gate-know.html" class="gb-item done"><div class="gb-dot"></div>01 認識</a>
+  <div class="gb-arrow">→</div>
+  <a href="gate-interact.html" class="gb-item done"><div class="gb-dot"></div>02 互動</a>
+  <div class="gb-arrow">→</div>
+  <a href="gate-buy.html" class="gb-item done"><div class="gb-dot"></div>03 購買</a>
+  <div class="gb-arrow">→</div>
+  <div class="gb-item active"><div class="gb-dot"></div>04 重複購買</div>
+  <div class="gb-arrow">→</div>
+  <a href="gate-share.html" class="gb-item"><div class="gb-dot"></div>05 分享</a>
+</div>
+
+<div class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="ph-wrap">
+    <div class="ph-num" style="color:rgba(255,107,107,.05)">04</div>
+    <div class="ph-label"><span class="sec-label" style="color:var(--rebuy)">Gate 04 · Rebuy</span></div>
+    <h1 class="ph-title">讓他們<br><span style="color:var(--rebuy)">再買一次</span></h1>
+    <p class="ph-desc">已購買的客戶是最有價值的資產。用對的時機點推出對的優惠，讓舊客持續回購，降低獲客成本，提升品牌長期獲利。</p>
+  </div>
+</div>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="stat-row fade">
+      <div>
+        <div class="stat-n">5×</div>
+        <div class="stat-l">開發新客的成本是維護舊客的 5 倍</div>
+      </div>
+      <div>
+        <div class="stat-n">67%</div>
+        <div class="stat-l">回購客的平均訂單金額高於新客 67%</div>
+      </div>
+      <div>
+        <div class="stat-n">80%</div>
+        <div class="stat-l">未來 80% 的營收來自現有 20% 客戶</div>
+      </div>
+    </div>
+
+    <div class="sec-head fade">
+      <div class="sec-label" style="color:var(--rebuy)">Creative Angles</div>
+      <h2 class="sec-h">重複購買門的素材策略</h2>
+      <p class="sec-desc">對已購客戶投放廣告，要避免和新客廣告混在一起。用 Facebook 自訂受眾鎖定購買過的人，再投放以下素材。</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+      <div class="angle-card fade d1">
+        <div class="angle-num">A</div>
+        <div class="angle-title">限量優惠組合</div>
+        <ul class="angle-list">
+          <li>過年保養組限時特惠</li>
+          <li>出遊保養組合包</li>
+          <li>換季保養新品上市</li>
+          <li>會員週年慶限定組</li>
+          <li>節慶禮盒限量預購</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d2">
+        <div class="angle-num">B</div>
+        <div class="angle-title">定期追蹤提醒</div>
+        <ul class="angle-list">
+          <li>定期追蹤 Email / 廣告</li>
+          <li>使用進度到一半時提醒補貨</li>
+          <li>定期膚況檢測邀請</li>
+          <li>使用滿 30 天的成效回報</li>
+          <li>個人化保養建議提醒</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d3">
+        <div class="angle-num">C</div>
+        <div class="angle-title">回購激勵機制</div>
+        <ul class="angle-list">
+          <li>空瓶回收換點數</li>
+          <li>回購再送小樣品</li>
+          <li>訂閱方案介紹廣告</li>
+          <li>VIP 會員專屬優惠</li>
+          <li>回購滿額贈禮</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip-box fade">
+      <div class="tip-label">策略提示</div>
+      <p>重複購買門最重要的技術是「自訂受眾」。在 Facebook 廣告後台建立「購買過的客戶」自訂受眾，然後用「排除」功能把他們從新客廣告組中排除。這樣新客看到的是認識和互動廣告，舊客看到的是回購優惠，兩者不相互干擾，效果更精準。</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-dark">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-label" style="color:var(--rebuy)">回購受眾設定</div>
+      <h2 class="sec-h">Facebook 自訂受眾操作指引</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem" class="fade">
+      <div style="padding:1.75rem 2rem;background:var(--card);border:1px solid var(--b);border-radius:14px">
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;color:var(--rebuy);margin-bottom:.75rem">01</div>
+        <div style="font-size:.82rem;font-weight:600;margin-bottom:.5rem">建立購買自訂受眾</div>
+        <p style="font-size:.78rem;color:var(--muted);line-height:1.8">在廣告後台 → 受眾 → 建立自訂受眾 → 網站流量，選「購買完成」事件，設定過去 180 天。</p>
+      </div>
+      <div style="padding:1.75rem 2rem;background:var(--card);border:1px solid var(--b);border-radius:14px">
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;color:var(--rebuy);margin-bottom:.75rem">02</div>
+        <div style="font-size:.82rem;font-weight:600;margin-bottom:.5rem">分段設定時間窗口</div>
+        <p style="font-size:.78rem;color:var(--muted);line-height:1.8">建立 30 天、90 天、180 天三個受眾，針對不同回購週期推送不同訊息，避免太早或太晚觸達。</p>
+      </div>
+      <div style="padding:1.75rem 2rem;background:var(--card);border:1px solid var(--b);border-radius:14px">
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;color:var(--rebuy);margin-bottom:.75rem">03</div>
+        <div style="font-size:.82rem;font-weight:600;margin-bottom:.5rem">從新客廣告中排除</div>
+        <p style="font-size:.78rem;color:var(--muted);line-height:1.8">在所有新客廣告組的「受眾」設定中，用「排除」功能把購買受眾排除，確保廣告不重複投放。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-nav">
+  <a href="gate-buy.html" class="pn-link">
+    <span class="pn-tag">← 上一門</span>
+    <span class="pn-title">Gate 03 · 購買</span>
+  </a>
+  <a href="gate-share.html" class="pn-link next">
+    <span class="pn-tag">下一門 →</span>
+    <span class="pn-title">Gate 05 · 分享</span>
+  </a>
+</div>
+
+<footer class="footer">
+  <div class="footer-brand">四大受眾<span class="g"> × </span>廣告五門</div>
+  <div class="footer-links">
+    <a href="audiences.html">四大受眾</a>
+    <a href="gate-know.html">認識</a>
+    <a href="gate-interact.html">互動</a>
+    <a href="gate-buy.html">購買</a>
+    <a href="gate-rebuy.html">重複購買</a>
+    <a href="gate-share.html">分享</a>
+  </div>
+  <div class="footer-copy">Facebook Ads Framework</div>
+</footer>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');io.unobserve(x.target)}}),{threshold:.08});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>四大受眾 — Facebook Ads Framework</title>
+<link rel="stylesheet" href="ads-style.css">
+<style>
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 70% 80% at 90% 50%,rgba(0,153,96,.07) 0%,transparent 55%),var(--bg);
+}
+.aud-card{border:1px solid var(--b);border-radius:20px;overflow:hidden;margin-bottom:1.5rem;background:var(--s1);transition:border-color .2s}
+.aud-card:hover{border-color:var(--b2)}
+.aud-head{
+  padding:3rem 3rem 2.5rem;
+  display:grid;grid-template-columns:auto 1fr;gap:0 3rem;align-items:start;
+  border-bottom:1px solid var(--b);
+}
+.aud-num{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:clamp(5rem,10vw,8rem);line-height:.85;
+  letter-spacing:-.05em;color:rgba(255,255,255,.07);
+  padding-top:.2rem;
+}
+.aud-name{
+  font-family:'Syne','Noto Sans TC',sans-serif;font-weight:800;
+  font-size:clamp(1.8rem,3.5vw,3rem);letter-spacing:-.025em;
+  margin-bottom:.75rem;
+}
+.aud-persona{color:var(--muted);font-size:.88rem;line-height:1.9;max-width:600px}
+.aud-body{padding:2rem 3rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.aud-kw-title{
+  font-family:'Space Mono',monospace;font-size:.52rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:1rem;
+}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:.4rem}
+.kw{
+  display:inline-block;padding:.22rem .8rem;border-radius:100px;
+  font-size:.72rem;background:var(--card);border:1px solid var(--b);color:var(--muted);
+  transition:border-color .2s,color .2s;
+}
+.kw:hover{border-color:rgba(0,212,138,.4);color:var(--accent)}
+.insight-title{
+  font-family:'Space Mono',monospace;font-size:.52rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:1rem;
+}
+.insight-list{list-style:none}
+.insight-list li{
+  padding:.45rem 0;border-bottom:1px solid var(--b);
+  font-size:.83rem;color:var(--muted);display:flex;align-items:baseline;gap:.6rem;
+}
+.insight-list li:last-child{border-bottom:none}
+.insight-list li::before{content:'→';color:var(--accent);flex-shrink:0;font-size:.7rem}
+/* colour bands per audience */
+.a1 .aud-name{color:#7c6eff}
+.a2 .aud-name{color:var(--accent)}
+.a3 .aud-name{color:#ffb454}
+.a4 .aud-name{color:#54d48c}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">四大受眾<span class="g"> × </span>廣告五門</a>
+  <ul class="nav-links">
+    <li><a href="index.html">首頁</a></li>
+    <li><a href="audiences.html" class="cur">四大受眾</a></li>
+    <li><a href="gate-know.html">廣告五門</a></li>
+  </ul>
+  <a href="gate-know.html" class="btn btn-g">進入五門 →</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="ph-wrap">
+    <div class="ph-num">4</div>
+    <div class="ph-label">
+      <span class="sec-label ga">Step 01 · 四大受眾</span>
+    </div>
+    <h1 class="ph-title">你在跟<br>誰說話？</h1>
+    <p class="ph-desc">根據 Facebook 興趣標籤把潛在客群分為四種人。找對受眾，才能說對話。</p>
+  </div>
+</div>
+
+<!-- AUDIENCES -->
+<section class="sec">
+  <div class="wrap">
+
+    <!-- A1 -->
+    <div class="aud-card a1 fade">
+      <div class="aud-head">
+        <div class="aud-num">01</div>
+        <div>
+          <div class="aud-name">在乎肌膚</div>
+          <p class="aud-persona">30 歲突然意識到要保養，但不知道如何選擇。覺得保養品很貴，也不確定哪個品牌說的是真的，真的有效嗎？這群人對皮膚狀態有隱性焦慮，需要的是「信任」與「專業」的品牌形象。</p>
+        </div>
+      </div>
+      <div class="aud-body">
+        <div>
+          <div class="aud-kw-title">Facebook 興趣標籤</div>
+          <div class="kw-wrap">
+            <span class="kw">抗老霜</span><span class="kw">潔面乳</span><span class="kw">老化</span>
+            <span class="kw">面膜</span><span class="kw">美容沙龍</span><span class="kw">個人護理</span>
+            <span class="kw">興趣/美容</span><span class="kw">興趣/皮膚</span>
+            <span class="kw">屈臣氏個人護理</span><span class="kw">興趣/康是美</span>
+          </div>
+        </div>
+        <div>
+          <div class="insight-title">廣告溝通重點</div>
+          <ul class="insight-list">
+            <li>以皮膚科醫生或專家背書建立信任</li>
+            <li>強調「30 歲保養不嫌晚」的正向切角</li>
+            <li>提供清楚的成份說明，降低選擇障礙</li>
+            <li>用真人使用前後對比，強化信心</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- A2 -->
+    <div class="aud-card a2 fade">
+      <div class="aud-head">
+        <div class="aud-num">02</div>
+        <div>
+          <div class="aud-name">購物習慣</div>
+          <p class="aud-persona">喜歡精品，平日有空愛往百貨公司逛，對購買專櫃保養有人情壓力，但在網路上購物反而輕鬆自在。這群人價值觀認同「好的東西值得花錢」，只需要讓他們覺得「值得」就能轉換。</p>
+        </div>
+      </div>
+      <div class="aud-body">
+        <div>
+          <div class="aud-kw-title">Facebook 興趣標籤</div>
+          <div class="kw-wrap">
+            <span class="kw">精品</span><span class="kw">百貨公司</span><span class="kw">購物中心</span>
+            <span class="kw">網路購物</span><span class="kw">時裝店</span><span class="kw">購物與時尚</span>
+            <span class="kw">女裝</span><span class="kw">服飾</span><span class="kw">時尚配件</span>
+          </div>
+        </div>
+        <div>
+          <div class="insight-title">廣告溝通重點</div>
+          <ul class="insight-list">
+            <li>強調「網路購買更優惠、更輕鬆」</li>
+            <li>用精品感的視覺呈現品牌質感</li>
+            <li>KOL 開箱與推薦，模擬百貨諮詢感</li>
+            <li>試用組降低首次購買門檻</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- A3 -->
+    <div class="aud-card a3 fade">
+      <div class="aud-head">
+        <div class="aud-num">03</div>
+        <div>
+          <div class="aud-name">美食</div>
+          <p class="aud-persona">25 歲剛畢業兩年的上班族，喜愛跟朋友去網美咖啡廳，平常愛吃甜點與炸物。到了上班日或出遊才驚覺自己的肌膚狀態不比 20 歲了。這群人需要「生活連結」讓他們意識到保養的必要性。</p>
+        </div>
+      </div>
+      <div class="aud-body">
+        <div>
+          <div class="aud-kw-title">Facebook 興趣標籤</div>
+          <div class="kw-wrap">
+            <span class="kw">咖啡廳</span><span class="kw">中式料理</span><span class="kw">日式料理</span>
+            <span class="kw">義大利料理</span><span class="kw">韓國料理</span><span class="kw">法國料理</span>
+            <span class="kw">甜點酒</span><span class="kw">氣泡酒</span><span class="kw">香檳酒</span>
+          </div>
+        </div>
+        <div>
+          <div class="insight-title">廣告溝通重點</div>
+          <ul class="insight-list">
+            <li>「吃炸物、甜食會加速老化」喚起危機感</li>
+            <li>輕鬆幽默的口吻，不說教</li>
+            <li>加班、超商等日常場景代入</li>
+            <li>簡單快速的保養步驟，符合忙碌生活</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- A4 -->
+    <div class="aud-card a4 fade">
+      <div class="aud-head">
+        <div class="aud-num">04</div>
+        <div>
+          <div class="aud-name">旅遊</div>
+          <p class="aud-persona">小有積蓄，平日忙於上班，週休二日喜歡出遊過夜。旅行時不知道保養品怎麼準備，常常素顏出遊卻擔心膚況。這群人需要的是「旅行情境」的解決方案，讓保養融入出遊計畫。</p>
+        </div>
+      </div>
+      <div class="aud-body">
+        <div>
+          <div class="aud-kw-title">Facebook 興趣標籤</div>
+          <div class="kw-wrap">
+            <span class="kw">旅遊</span><span class="kw">度假</span><span class="kw">旅遊指南</span>
+            <span class="kw">生態旅遊</span><span class="kw">旅遊頻道</span>
+            <span class="kw">ETtoday旅遊雲</span><span class="kw">東京都</span>
+            <span class="kw">日本人の日本旅遊指南</span>
+          </div>
+        </div>
+        <div>
+          <div class="insight-title">廣告溝通重點</div>
+          <ul class="insight-list">
+            <li>「出遊素顏不 NG」解決旅行痛點</li>
+            <li>旅行保養組合，一瓶搞定</li>
+            <li>必備行李清單融入保養品</li>
+            <li>旅行打卡照中的好膚況就是廣告</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PAGE NAV -->
+<div class="page-nav">
+  <a href="index.html" class="pn-link">
+    <span class="pn-tag">← 回到</span>
+    <span class="pn-title">首頁</span>
+  </a>
+  <a href="gate-know.html" class="pn-link next">
+    <span class="pn-tag">下一步 →</span>
+    <span class="pn-title">Gate 01 · 認識</span>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">四大受眾<span class="g"> × </span>廣告五門</div>
+  <div class="footer-links">
+    <a href="audiences.html">四大受眾</a>
+    <a href="gate-know.html">認識</a>
+    <a href="gate-interact.html">互動</a>
+    <a href="gate-buy.html">購買</a>
+    <a href="gate-rebuy.html">重複購買</a>
+    <a href="gate-share.html">分享</a>
+  </div>
+  <div class="footer-copy">Facebook Ads Framework</div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');io.unobserve(x.target)}}),{threshold:.08});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

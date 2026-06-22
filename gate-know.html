@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gate 01 · 認識 — 廣告五門</title>
+<link rel="stylesheet" href="ads-style.css">
+<style>
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 60% 70% at 80% 30%,rgba(85,72,217,.08) 0%,transparent 55%),var(--bg);
+}
+.angle-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+.angle-card{
+  background:var(--card);border:1px solid var(--b);border-radius:14px;
+  padding:1.75rem 2rem;transition:border-color .2s;
+}
+.angle-card:hover{border-color:var(--know)}
+.angle-num{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:3rem;
+  line-height:.85;letter-spacing:-.04em;color:rgba(85,72,217,.12);
+  margin-bottom:.75rem;
+}
+.angle-title{
+  font-family:'Space Mono',monospace;font-size:.55rem;
+  letter-spacing:.15em;text-transform:uppercase;color:#7c6eff;margin-bottom:1rem;
+}
+.angle-list{list-style:none}
+.angle-list li{
+  padding:.4rem 0;border-bottom:1px solid var(--b);
+  font-size:.83rem;color:var(--muted);display:flex;align-items:baseline;gap:.6rem;
+}
+.angle-list li:last-child{border-bottom:none}
+.angle-list li::before{content:'–';color:#7c6eff;flex-shrink:0;font-size:.65rem}
+.tip-box{
+  background:rgba(124,110,255,.07);border:1px solid rgba(124,110,255,.2);
+  border-radius:14px;padding:2rem 2.25rem;margin-top:3rem;
+}
+.tip-label{
+  font-family:'Space Mono',monospace;font-size:.52rem;
+  letter-spacing:.16em;text-transform:uppercase;color:#7c6eff;margin-bottom:.75rem;
+}
+.tip-box p{font-size:.88rem;color:var(--muted);line-height:1.85}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">四大受眾<span class="g"> × </span>廣告五門</a>
+  <ul class="nav-links">
+    <li><a href="index.html">首頁</a></li>
+    <li><a href="audiences.html">四大受眾</a></li>
+    <li><a href="gate-know.html" class="cur">廣告五門</a></li>
+  </ul>
+  <div class="nav-progress">
+    <div class="np-dot on" title="Gate 01 認識"></div>
+    <div class="np-dot" title="Gate 02 互動"></div>
+    <div class="np-dot" title="Gate 03 購買"></div>
+    <div class="np-dot" title="Gate 04 重購"></div>
+    <div class="np-dot" title="Gate 05 分享"></div>
+  </div>
+</nav>
+
+<!-- GATE BAR -->
+<div class="gate-bar" style="margin-top:64px">
+  <div class="gb-item active"><div class="gb-dot"></div>01 認識</div>
+  <div class="gb-arrow">→</div>
+  <a href="gate-interact.html" class="gb-item"><div class="gb-dot"></div>02 互動</a>
+  <div class="gb-arrow">→</div>
+  <a href="gate-buy.html" class="gb-item"><div class="gb-dot"></div>03 購買</a>
+  <div class="gb-arrow">→</div>
+  <a href="gate-rebuy.html" class="gb-item"><div class="gb-dot"></div>04 重複購買</a>
+  <div class="gb-arrow">→</div>
+  <a href="gate-share.html" class="gb-item"><div class="gb-dot"></div>05 分享</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="ph-wrap">
+    <div class="ph-num" style="color:rgba(124,110,255,.06)">01</div>
+    <div class="ph-label">
+      <span class="sec-label" style="color:#7c6eff">Gate 01 · Know</span>
+    </div>
+    <h1 class="ph-title">讓他們<br><span style="color:#7c6eff">認識你</span></h1>
+    <p class="ph-desc">這是消費者旅程的起點。目標是讓完全陌生的人第一次看到你的品牌，並建立初步的信任感與印象。</p>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-label" style="color:#7c6eff">Creative Angles</div>
+      <h2 class="sec-h">認識門的四大素材切角</h2>
+      <p class="sec-desc">認識門的核心任務是「建立信任」。陌生人需要一個理由停下來看你，再找一個理由相信你。</p>
+    </div>
+
+    <div class="angle-grid">
+      <div class="angle-card fade d1">
+        <div class="angle-num">A</div>
+        <div class="angle-title">專家見證</div>
+        <ul class="angle-list">
+          <li>皮膚科醫生推薦</li>
+          <li>家醫科醫生說明</li>
+          <li>專業美容師使用心得</li>
+          <li>營養師的成份解析</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d2">
+        <div class="angle-num">B</div>
+        <div class="angle-title">百人見證</div>
+        <ul class="angle-list">
+          <li>互惠部落客開箱</li>
+          <li>IG / YouTube / 抖音推薦</li>
+          <li>開箱與使用見證影片</li>
+          <li>素人使用前後對比</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d3">
+        <div class="angle-num">C</div>
+        <div class="angle-title">美人素材</div>
+        <ul class="angle-list">
+          <li>內部員工素人見證</li>
+          <li>百人徵選真實用戶</li>
+          <li>不同膚質類型的見證</li>
+          <li>使用後素顏照</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d4">
+        <div class="angle-num">D</div>
+        <div class="angle-title">知名人物</div>
+        <ul class="angle-list">
+          <li>已有合作的 KOL</li>
+          <li>品牌部落客夥伴</li>
+          <li>知名意見領袖推薦</li>
+          <li>藝人或網紅背書</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip-box fade">
+      <div class="tip-label">策略提示</div>
+      <p>認識門的素材不應該急著賣產品。重點是讓受眾停止滑動（stop scroll），建立「這個品牌好像不錯」的第一印象。專家見證最有公信力，建議優先測試；百人見證則能快速累積真實感。</p>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE MATCH -->
+<section class="sec sec-dark">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-label" style="color:#7c6eff">Audience × Gate 01</div>
+      <h2 class="sec-h">四大受眾的認識門策略</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem" class="fade">
+      <div style="padding:1.75rem 2rem;background:var(--card);border:1px solid var(--b);border-radius:14px">
+        <div style="font-size:.7rem;color:#7c6eff;font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem">在乎肌膚</div>
+        <p style="font-size:.83rem;color:var(--muted);line-height:1.8">皮膚科醫生見證 ＋ 成份專業解析。這群人需要「科學根據」才能建立信任，用醫療專業克服選擇障礙。</p>
+      </div>
+      <div style="padding:1.75rem 2rem;background:var(--card);border:1px solid var(--b);border-radius:14px">
+        <div style="font-size:.7rem;color:#7c6eff;font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem">購物習慣</div>
+        <p style="font-size:.83rem;color:var(--muted);line-height:1.8">時尚 KOL 開箱 ＋ 精品質感視覺。這群人看重品牌形象，用有品味的 KOL 讓他們覺得「這個品牌跟我一樣有品」。</p>
+      </div>
+      <div style="padding:1.75rem 2rem;background:var(--card);border:1px solid var(--b);border-radius:14px">
+        <div style="font-size:.7rem;color:#ffb454;font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem">美食</div>
+        <p style="font-size:.83rem;color:var(--muted);line-height:1.8">美容師素人推薦 ＋ 幽默日常見證。這群人不喜歡說教，用輕鬆有趣的素人見證讓他們覺得「哇好像真的有差」。</p>
+      </div>
+      <div style="padding:1.75rem 2rem;background:var(--card);border:1px solid var(--b);border-radius:14px">
+        <div style="font-size:.7rem;color:#54d48c;font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem">旅遊</div>
+        <p style="font-size:.83rem;color:var(--muted);line-height:1.8">旅遊 KOL 推薦 ＋ 出遊前後保養見證。這群人在旅行場景才意識到保養的重要，用旅遊情境讓他們認識你。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE NAV -->
+<div class="page-nav">
+  <a href="audiences.html" class="pn-link">
+    <span class="pn-tag">← 上一步</span>
+    <span class="pn-title">四大受眾</span>
+  </a>
+  <a href="gate-interact.html" class="pn-link next">
+    <span class="pn-tag">下一門 →</span>
+    <span class="pn-title">Gate 02 · 互動</span>
+  </a>
+</div>
+
+<footer class="footer">
+  <div class="footer-brand">四大受眾<span class="g"> × </span>廣告五門</div>
+  <div class="footer-links">
+    <a href="audiences.html">四大受眾</a>
+    <a href="gate-know.html">認識</a>
+    <a href="gate-interact.html">互動</a>
+    <a href="gate-buy.html">購買</a>
+    <a href="gate-rebuy.html">重複購買</a>
+    <a href="gate-share.html">分享</a>
+  </div>
+  <div class="footer-copy">Facebook Ads Framework</div>
+</footer>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');io.unobserve(x.target)}}),{threshold:.08});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

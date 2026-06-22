@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gate 02 · 互動 — 廣告五門</title>
+<link rel="stylesheet" href="ads-style.css">
+<style>
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 60% 70% at 80% 30%,rgba(0,153,96,.08) 0%,transparent 55%),var(--bg);
+}
+.angle-card{
+  background:var(--card);border:1px solid var(--b);border-radius:14px;
+  padding:1.75rem 2rem;transition:border-color .2s;
+}
+.angle-card:hover{border-color:var(--interact)}
+.angle-num{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:3rem;
+  line-height:.85;letter-spacing:-.04em;color:rgba(0,212,138,.12);margin-bottom:.75rem;
+}
+.angle-title{
+  font-family:'Space Mono',monospace;font-size:.55rem;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;
+}
+.angle-list{list-style:none}
+.angle-list li{
+  padding:.4rem 0;border-bottom:1px solid var(--b);
+  font-size:.83rem;color:var(--muted);display:flex;align-items:baseline;gap:.6rem;
+}
+.angle-list li:last-child{border-bottom:none}
+.angle-list li::before{content:'–';color:var(--accent);flex-shrink:0;font-size:.65rem}
+.angle-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+.angle-grid .angle-card{grid-column:span 2}
+.angle-grid .angle-card:nth-child(4),
+.angle-grid .angle-card:nth-child(5){grid-column:span 3}
+.tip-box{
+  background:var(--adim2);border:1px solid rgba(0,212,138,.18);
+  border-radius:14px;padding:2rem 2.25rem;margin-top:3rem;
+}
+.tip-label{
+  font-family:'Space Mono',monospace;font-size:.52rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;
+}
+.tip-box p{font-size:.88rem;color:var(--muted);line-height:1.85}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">四大受眾<span class="g"> × </span>廣告五門</a>
+  <ul class="nav-links">
+    <li><a href="index.html">首頁</a></li>
+    <li><a href="audiences.html">四大受眾</a></li>
+    <li><a href="gate-know.html" class="cur">廣告五門</a></li>
+  </ul>
+  <div class="nav-progress">
+    <div class="np-dot" title="Gate 01"></div>
+    <div class="np-dot on" title="Gate 02"></div>
+    <div class="np-dot" title="Gate 03"></div>
+    <div class="np-dot" title="Gate 04"></div>
+    <div class="np-dot" title="Gate 05"></div>
+  </div>
+</nav>
+
+<div class="gate-bar" style="margin-top:64px">
+  <a href="gate-know.html" class="gb-item done"><div class="gb-dot"></div>01 認識</a>
+  <div class="gb-arrow">→</div>
+  <div class="gb-item active"><div class="gb-dot"></div>02 互動</div>
+  <div class="gb-arrow">→</div>
+  <a href="gate-buy.html" class="gb-item"><div class="gb-dot"></div>03 購買</a>
+  <div class="gb-arrow">→</div>
+  <a href="gate-rebuy.html" class="gb-item"><div class="gb-dot"></div>04 重複購買</a>
+  <div class="gb-arrow">→</div>
+  <a href="gate-share.html" class="gb-item"><div class="gb-dot"></div>05 分享</a>
+</div>
+
+<div class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="ph-wrap">
+    <div class="ph-num" style="color:rgba(0,212,138,.05)">02</div>
+    <div class="ph-label"><span class="sec-label ga">Gate 02 · Interaction</span></div>
+    <h1 class="ph-title">讓他們<br><span class="g">主動靠近</span></h1>
+    <p class="ph-desc">認識之後，下一步是讓受眾主動與你互動——按讚、留言、分享、點擊。互動數據也是 Facebook 演算法判斷廣告品質的重要指標。</p>
+  </div>
+</div>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-label ga">Creative Angles</div>
+      <h2 class="sec-h">互動門的五大素材切角</h2>
+      <p class="sec-desc">這個階段的素材目標是「引發反應」，讓受眾忍不住想留言、分享或點擊，深化與品牌的連結。</p>
+    </div>
+
+    <div class="angle-grid">
+      <div class="angle-card fade d1">
+        <div class="angle-num">A</div>
+        <div class="angle-title">知識型內容</div>
+        <ul class="angle-list">
+          <li>膠原蛋白恢復彈性原理</li>
+          <li>延遲老化的保養成份</li>
+          <li>冬夏季肌膚保濕教學</li>
+          <li>撫平細紋的正確方式</li>
+          <li>20–40 歲保養重點差異</li>
+          <li>洗臉步驟完整教學</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d2">
+        <div class="angle-num">B</div>
+        <div class="angle-title">優惠吸引</div>
+        <ul class="angle-list">
+          <li>新手體驗組限時優惠</li>
+          <li>生日月專屬禮金</li>
+          <li>留言評論送優惠券</li>
+          <li>首購折扣碼</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d3">
+        <div class="angle-num">C</div>
+        <div class="angle-title">有趣互動</div>
+        <ul class="angle-list">
+          <li>心理測驗：你是什麼肌？</li>
+          <li>星座運勢與肌膚保養</li>
+          <li>膚質小測驗</li>
+          <li>保養迷思大挑戰</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d4">
+        <div class="angle-num">D</div>
+        <div class="angle-title">溫度感情</div>
+        <ul class="angle-list">
+          <li>使用後膚況實際變好了</li>
+          <li>有肌膚困擾的小編聊天室</li>
+          <li>消費者問題故事與 QA</li>
+          <li>品牌客服真實對話截圖</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d1">
+        <div class="angle-num">E</div>
+        <div class="angle-title">遊戲化</div>
+        <ul class="angle-list">
+          <li>Chatbot 互動對話</li>
+          <li>留言抽獎活動</li>
+          <li>保養挑戰打卡</li>
+          <li>限時投票活動</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip-box fade">
+      <div class="tip-label">策略提示</div>
+      <p>互動門最怕「說教」。知識型內容要像朋友分享而非廣告文案；有趣互動要讓人覺得好玩，而不是刻意製造流量。「溫度感情」類型通常互動率最高，因為真實的故事和困擾最容易引起共鳴。</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-dark">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-label ga">Audience × Gate 02</div>
+      <h2 class="sec-h">四大受眾的互動門策略</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem" class="fade">
+      <div style="padding:1.75rem 2rem;background:var(--card);border:1px solid var(--b);border-radius:14px">
+        <div style="font-size:.7rem;color:#7c6eff;font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem">在乎肌膚</div>
+        <p style="font-size:.83rem;color:var(--muted);line-height:1.8">保養知識教學 ＋ 膚況 QA 聊天室。這群人渴望了解更多，知識型內容讓他們覺得品牌是可信任的專業夥伴。</p>
+      </div>
+      <div style="padding:1.75rem 2rem;background:var(--card);border:1px solid var(--b);border-radius:14px">
+        <div style="font-size:.7rem;color:var(--accent);font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem">購物習慣</div>
+        <p style="font-size:.83rem;color:var(--muted);line-height:1.8">新手體驗優惠 ＋ 評論回饋機制。這群人重視性價比，用優惠降低試用門檻，讓他們覺得「划算又不失品味」。</p>
+      </div>
+      <div style="padding:1.75rem 2rem;background:var(--card);border:1px solid var(--b);border-radius:14px">
+        <div style="font-size:.7rem;color:#ffb454;font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem">美食</div>
+        <p style="font-size:.83rem;color:var(--muted);line-height:1.8">有趣互動測驗 ＋ 星座肌膚運勢。這群人愛玩愛互動，用輕鬆幽默的方式讓他們在玩樂中認識保養知識。</p>
+      </div>
+      <div style="padding:1.75rem 2rem;background:var(--card);border:1px solid var(--b);border-radius:14px">
+        <div style="font-size:.7rem;color:#54d48c;font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem">旅遊</div>
+        <p style="font-size:.83rem;color:var(--muted);line-height:1.8">旅行保養知識 ＋ 換季膚況教學。這群人在出發前有旅行準備焦慮，提供實用資訊讓他們覺得品牌懂他們。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-nav">
+  <a href="gate-know.html" class="pn-link">
+    <span class="pn-tag">← 上一門</span>
+    <span class="pn-title">Gate 01 · 認識</span>
+  </a>
+  <a href="gate-buy.html" class="pn-link next">
+    <span class="pn-tag">下一門 →</span>
+    <span class="pn-title">Gate 03 · 購買</span>
+  </a>
+</div>
+
+<footer class="footer">
+  <div class="footer-brand">四大受眾<span class="g"> × </span>廣告五門</div>
+  <div class="footer-links">
+    <a href="audiences.html">四大受眾</a>
+    <a href="gate-know.html">認識</a>
+    <a href="gate-interact.html">互動</a>
+    <a href="gate-buy.html">購買</a>
+    <a href="gate-rebuy.html">重複購買</a>
+    <a href="gate-share.html">分享</a>
+  </div>
+  <div class="footer-copy">Facebook Ads Framework</div>
+</footer>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');io.unobserve(x.target)}}),{threshold:.08});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

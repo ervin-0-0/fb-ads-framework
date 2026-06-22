@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gate 03 · 購買 — 廣告五門</title>
+<link rel="stylesheet" href="ads-style.css">
+<style>
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 60% 70% at 80% 30%,rgba(184,110,0,.07) 0%,transparent 55%),var(--bg);
+}
+.angle-card{
+  background:var(--card);border:1px solid var(--b);border-radius:14px;
+  padding:1.75rem 2rem;transition:border-color .2s;
+}
+.angle-card:hover{border-color:var(--buy)}
+.angle-num{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:3rem;
+  line-height:.85;letter-spacing:-.04em;color:rgba(255,180,84,.12);margin-bottom:.75rem;
+}
+.angle-title{
+  font-family:'Space Mono',monospace;font-size:.55rem;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--buy);margin-bottom:.5rem;
+}
+.angle-aud{font-size:.7rem;color:rgba(255,180,84,.5);margin-bottom:.75rem}
+.angle-list{list-style:none}
+.angle-list li{
+  padding:.4rem 0;border-bottom:1px solid var(--b);
+  font-size:.83rem;color:var(--muted);display:flex;align-items:baseline;gap:.6rem;
+}
+.angle-list li:last-child{border-bottom:none}
+.angle-list li::before{content:'–';color:var(--buy);flex-shrink:0;font-size:.65rem}
+.angle-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+.angle-grid .angle-card{grid-column:span 2}
+.angle-grid .angle-card:nth-child(4),
+.angle-grid .angle-card:nth-child(5){grid-column:span 3}
+.tip-box{
+  background:rgba(255,180,84,.06);border:1px solid rgba(255,180,84,.18);
+  border-radius:14px;padding:2rem 2.25rem;margin-top:3rem;
+}
+.tip-label{
+  font-family:'Space Mono',monospace;font-size:.52rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--buy);margin-bottom:.75rem;
+}
+.tip-box p{font-size:.88rem;color:var(--muted);line-height:1.85}
+/* Matrix highlight */
+.matrix-note{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.3rem .9rem;border-radius:100px;font-size:.72rem;
+  background:rgba(255,180,84,.1);border:1px solid rgba(255,180,84,.25);
+  color:var(--buy);font-weight:500;margin-bottom:1rem;
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">四大受眾<span class="g"> × </span>廣告五門</a>
+  <ul class="nav-links">
+    <li><a href="index.html">首頁</a></li>
+    <li><a href="audiences.html">四大受眾</a></li>
+    <li><a href="gate-know.html" class="cur">廣告五門</a></li>
+  </ul>
+  <div class="nav-progress">
+    <div class="np-dot" title="Gate 01"></div>
+    <div class="np-dot" title="Gate 02"></div>
+    <div class="np-dot on" title="Gate 03"></div>
+    <div class="np-dot" title="Gate 04"></div>
+    <div class="np-dot" title="Gate 05"></div>
+  </div>
+</nav>
+
+<div class="gate-bar" style="margin-top:64px">
+  <a href="gate-know.html" class="gb-item done"><div class="gb-dot"></div>01 認識</a>
+  <div class="gb-arrow">→</div>
+  <a href="gate-interact.html" class="gb-item done"><div class="gb-dot"></div>02 互動</a>
+  <div class="gb-arrow">→</div>
+  <div class="gb-item active"><div class="gb-dot"></div>03 購買</div>
+  <div class="gb-arrow">→</div>
+  <a href="gate-rebuy.html" class="gb-item"><div class="gb-dot"></div>04 重複購買</a>
+  <div class="gb-arrow">→</div>
+  <a href="gate-share.html" class="gb-item"><div class="gb-dot"></div>05 分享</a>
+</div>
+
+<div class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="ph-wrap">
+    <div class="ph-num" style="color:rgba(255,180,84,.05)">03</div>
+    <div class="ph-label"><span class="sec-label" style="color:var(--buy)">Gate 03 · Buy</span></div>
+    <h1 class="ph-title">讓他們<br><span style="color:var(--buy)">決定購買</span></h1>
+    <p class="ph-desc">這是最關鍵的轉換門。把四大受眾的生活情境直接搬進廣告，讓每種人都覺得「這個產品就是為我設計的」，製作 SEO 情境素材，打通最後一哩路。</p>
+  </div>
+</div>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="matrix-note">★ 四大受眾在此門直接對應素材切角</div>
+      <div class="sec-label" style="color:var(--buy)">Creative Angles</div>
+      <h2 class="sec-h">購買門的五大素材切角</h2>
+      <p class="sec-desc">購買門的核心策略：把四大受眾的生活情境轉換成廣告文案，讓每種人都能在廣告中看到自己的影子。</p>
+    </div>
+
+    <div class="angle-grid">
+      <div class="angle-card fade d1">
+        <div class="angle-num">A</div>
+        <div class="angle-title">在乎膚況情境</div>
+        <div class="angle-aud">← 對應受眾 01：在乎肌膚</div>
+        <ul class="angle-list">
+          <li>新娘美美登場前的保養</li>
+          <li>換季膚況不穩使用後穩定</li>
+          <li>過夜素顏不害怕</li>
+          <li>30 後抗老保養指南</li>
+          <li>熬夜看劇上班臉菜菜</li>
+          <li>貴婦肌平日養成</li>
+          <li>好萊塢女星都在用的保養聖品</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d2">
+        <div class="angle-num">B</div>
+        <div class="angle-title">購物習慣情境</div>
+        <div class="angle-aud">← 對應受眾 02：購物習慣</div>
+        <ul class="angle-list">
+          <li>SPA 名店，網路購買小確幸</li>
+          <li>網路買優惠多更多</li>
+          <li>適合自己的簡約保養新時尚</li>
+          <li>假日宅在家，精品保養送到家</li>
+          <li>不用面對面，輕鬆購入保養品</li>
+          <li>試用組帶回家，高回購率保養品</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d3">
+        <div class="angle-num">C</div>
+        <div class="angle-title">美食生活情境</div>
+        <div class="angle-aud">← 對應受眾 03：美食</div>
+        <ul class="angle-list">
+          <li>吃的健康擦的美麗</li>
+          <li>炸得吃太多，肌膚 NG，急救聖品</li>
+          <li>加班天天吃超商，拯救疲憊肌</li>
+          <li>少吃甜食、炸物，龍血助攻逆齡肌</li>
+          <li>讓你「變老」的壞習慣</li>
+          <li>甜食加速肌膚老化，3 保養對策</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d4">
+        <div class="angle-num">D</div>
+        <div class="angle-title">旅遊場景情境</div>
+        <div class="angle-aud">← 對應受眾 04：旅遊</div>
+        <ul class="angle-list">
+          <li>出遊過夜素顏不 NG，就靠這一罐</li>
+          <li>旅行保養術，帶你遊遍世界各地</li>
+          <li>旅行保養組，不再為瓶瓶罐罐煩惱</li>
+          <li>必備行李清單，旅行美妝保養包</li>
+          <li>出遊睡不好，拯救疲憊肌</li>
+          <li>旅行膚況 SAFE！好物不藏私</li>
+        </ul>
+      </div>
+      <div class="angle-card fade d1">
+        <div class="angle-num">E</div>
+        <div class="angle-title">SC 場景影片</div>
+        <div class="angle-aud">← 通用型轉換素材</div>
+        <ul class="angle-list">
+          <li>使用情境 TA 短影片</li>
+          <li>限量優惠倒數通知</li>
+          <li>「該買了」系列提醒</li>
+          <li>加入購物車再行銷廣告</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip-box fade">
+      <div class="tip-label">策略提示</div>
+      <p>購買門的成效關鍵是「情境代入感」。文案要讓受眾看到第一行就想繼續讀，因為「這說的就是我」。同一個產品，用不同受眾的生活場景分別製作廣告，測試哪個情境的轉換率最高，再集中預算放大。</p>
+    </div>
+  </div>
+</section>
+
+<!-- MATRIX TABLE -->
+<section class="sec sec-dark">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-label" style="color:var(--buy)">受眾 × 購買門 完整對照</div>
+      <h2 class="sec-h">每種人的購買文案方向</h2>
+    </div>
+    <div style="overflow-x:auto" class="fade">
+      <table style="width:100%;border-collapse:collapse;font-size:.82rem">
+        <thead>
+          <tr>
+            <th style="padding:.85rem 1.25rem;text-align:left;border-bottom:1px solid var(--b);font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:400;background:var(--card)">受眾</th>
+            <th style="padding:.85rem 1.25rem;text-align:left;border-bottom:1px solid var(--b);font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--buy);font-weight:400;background:var(--card)">主要痛點</th>
+            <th style="padding:.85rem 1.25rem;text-align:left;border-bottom:1px solid var(--b);font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--buy);font-weight:400;background:var(--card)">購買觸發點</th>
+            <th style="padding:.85rem 1.25rem;text-align:left;border-bottom:1px solid var(--b);font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--buy);font-weight:400;background:var(--card)">推薦素材格式</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:.85rem 1.25rem;border-bottom:1px solid var(--b);font-weight:600">👤 在乎肌膚</td>
+            <td style="padding:.85rem 1.25rem;border-bottom:1px solid var(--b);color:var(--muted)">不知道如何選保養品</td>
+            <td style="padding:.85rem 1.25rem;border-bottom:1px solid var(--b);color:var(--muted)">看到具體的「膚況改善」情境</td>
+            <td style="padding:.85rem 1.25rem;border-bottom:1px solid var(--b);color:var(--muted)">前後對比圖、使用情境影片</td>
+          </tr>
+          <tr>
+            <td style="padding:.85rem 1.25rem;border-bottom:1px solid var(--b);font-weight:600">🛍 購物習慣</td>
+            <td style="padding:.85rem 1.25rem;border-bottom:1px solid var(--b);color:var(--muted)">專櫃有人情壓力</td>
+            <td style="padding:.85rem 1.25rem;border-bottom:1px solid var(--b);color:var(--muted)">「網路買更方便、更省」說服</td>
+            <td style="padding:.85rem 1.25rem;border-bottom:1px solid var(--b);color:var(--muted)">精品感靜態圖、輕奢開箱影片</td>
+          </tr>
+          <tr>
+            <td style="padding:.85rem 1.25rem;border-bottom:1px solid var(--b);font-weight:600">🍜 美食</td>
+            <td style="padding:.85rem 1.25rem;border-bottom:1px solid var(--b);color:var(--muted)">飲食習慣影響膚況</td>
+            <td style="padding:.85rem 1.25rem;border-bottom:1px solid var(--b);color:var(--muted)">「這就是我」的生活情境代入</td>
+            <td style="padding:.85rem 1.25rem;border-bottom:1px solid var(--b);color:var(--muted)">短影片、幽默圖文、貼文</td>
+          </tr>
+          <tr>
+            <td style="padding:.85rem 1.25rem;font-weight:600">✈️ 旅遊</td>
+            <td style="padding:.85rem 1.25rem;color:var(--muted)">旅行不知道帶什麼保養品</td>
+            <td style="padding:.85rem 1.25rem;color:var(--muted)">「出遊必備」的打包情境</td>
+            <td style="padding:.85rem 1.25rem;color:var(--muted)">旅行 vlog 風格、行李清單圖</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="page-nav">
+  <a href="gate-interact.html" class="pn-link">
+    <span class="pn-tag">← 上一門</span>
+    <span class="pn-title">Gate 02 · 互動</span>
+  </a>
+  <a href="gate-rebuy.html" class="pn-link next">
+    <span class="pn-tag">下一門 →</span>
+    <span class="pn-title">Gate 04 · 重複購買</span>
+  </a>
+</div>
+
+<footer class="footer">
+  <div class="footer-brand">四大受眾<span class="g"> × </span>廣告五門</div>
+  <div class="footer-links">
+    <a href="audiences.html">四大受眾</a>
+    <a href="gate-know.html">認識</a>
+    <a href="gate-interact.html">互動</a>
+    <a href="gate-buy.html">購買</a>
+    <a href="gate-rebuy.html">重複購買</a>
+    <a href="gate-share.html">分享</a>
+  </div>
+  <div class="footer-copy">Facebook Ads Framework</div>
+</footer>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');io.unobserve(x.target)}}),{threshold:.08});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
