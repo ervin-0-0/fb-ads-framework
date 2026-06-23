@@ -180,6 +180,31 @@
   </div>
 </section>
 
+<!-- GENERATOR -->
+<section class="sec" style="background:var(--s1)">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-label ga">AI Script Generator</div>
+      <h2 class="sec-h">素材腳本產生器</h2>
+      <p class="sec-desc">選擇目標受眾與素材切角，AI 幫你生成完整廣告文案草稿，可直接使用或作為發想起點。</p>
+    </div>
+    <div id="gen-interact" class="fade d1"></div>
+  </div>
+</section>
+<script src="ads-generator.js"></script>
+<script>
+initAdsGenerator({
+  containerId:'gen-interact', gate:'interact', gateName:'互動', gateColor:'#009960',
+  angles:[
+    {key:'A',label:'知識型內容',desc:'24節氣養生茶飲指南、穀物茶vs咖啡身體差異、黑豆枸杞蕎麥日常功效'},
+    {key:'B',label:'優惠吸引',desc:'首次試飲體驗組限時特惠、留言評論送下次折扣、訂閱首月優惠'},
+    {key:'C',label:'有趣互動',desc:'體質測驗：你適合哪種茶？你是穀物茶型還是花果茶型？'},
+    {key:'D',label:'溫度感情',desc:'戒咖啡因30天後的真實感受、第一次試耘初的那天的故事分享'},
+    {key:'E',label:'遊戲化',desc:'節氣打卡挑戰、21天養成喝茶習慣挑戰、留言抽體驗組'},
+  ]
+});
+</script>
+
 <div class="page-nav">
   <a href="gate-know.html" class="pn-link">
     <span class="pn-tag">← 上一門</span>

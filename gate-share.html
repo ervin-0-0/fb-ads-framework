@@ -223,6 +223,30 @@
   </div>
 </section>
 
+<!-- GENERATOR -->
+<section class="sec" style="background:var(--s1)">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="sec-label" style="color:var(--share)">AI Script Generator</div>
+      <h2 class="sec-h">素材腳本產生器</h2>
+      <p class="sec-desc">選擇目標受眾與素材切角，AI 幫你生成完整廣告文案草稿，可直接使用或作為發想起點。</p>
+    </div>
+    <div id="gen-share" class="fade d1"></div>
+  </div>
+</section>
+<script src="ads-generator.js"></script>
+<script>
+initAdsGenerator({
+  containerId:'gen-share', gate:'share', gateName:'分享', gateColor:'#1a9e52',
+  angles:[
+    {key:'A',label:'空袋打卡回饋',desc:'空茶袋打卡分享拿積點、集滿空袋換新品、IG打卡標記耘初送優惠'},
+    {key:'B',label:'老客分享心得',desc:'喝了30天後分享感受享折扣、圖片心得展示官網、好評留言送折扣'},
+    {key:'C',label:'推薦朋友方案',desc:'推薦朋友雙方享85折、送朋友一盒讓分享感覺像送禮'},
+    {key:'D',label:'耘初生活大使',desc:'徵選100位生活大使、免費試飲換真實喝茶日記、大使專屬折扣碼'},
+  ]
+});
+</script>
+
 <div class="page-nav">
   <a href="gate-rebuy.html" class="pn-link">
     <span class="pn-tag">← 上一門</span>
