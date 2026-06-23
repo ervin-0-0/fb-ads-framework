@@ -118,13 +118,35 @@ ${angle.desc ? `切角說明：${angle.desc}` : ''}
 }
 
 function renderOutput(text, gateColor, audience, angle) {
-  const sectionDefs = [
-    { key: '廣告標題', icon: '📌' },
-    { key: '廣告正文', icon: '📝' },
-    { key: '行動呼籲 CTA', icon: '🎯' },
-    { key: '推薦素材格式', icon: '🎬' },
-    { key: '視覺方向', icon: '🖼' },
+  const SECTION_MAP = [
+    { match: '廣告標題', label: '廣告標題', icon: '📌' },
+    { match: '廣告正文', label: '廣告正文', icon: '📝' },
+    { match: '行動呼籲',  label: '行動呼籲 CTA', icon: '🎯' },
+    { match: '推薦素材',  label: '推薦素材格式', icon: '🎬' },
+    { match: '視覺方向',  label: '視覺方向', icon: '🖼' },
   ];
+
+  // Line-by-line parser — tolerates any trailing text after **Header**
+  const lines = text.split('\n');
+  const sections = [];
+  let cur = null;
+  lines.forEach(line => {
+    const m = line.match(/^\*\*(.+?)\*\*/);
+    if (m) {
+      if (cur) sections.push(cur);
+      const sameLineRest = line.replace(/^\*\*.+?\*\*\s*/, '').trim();
+      cur = { header: m[1].trim(), lines: sameLineRest ? [sameLineRest] : [] };
+    } else if (cur) {
+      cur.lines.push(line);
+    }
+  });
+  if (cur) sections.push(cur);
+
+  const matched = SECTION_MAP.map(def => {
+    const sec = sections.find(s => s.header.includes(def.match));
+    const content = sec ? sec.lines.join('\n').trim() : '';
+    return { ...def, content };
+  }).filter(s => s.content);
 
   let html = `<div class="gen-meta" style="--gc:${gateColor}">
     <span>${audience.label}</span>
@@ -132,21 +154,17 @@ function renderOutput(text, gateColor, audience, angle) {
     <span>切角 ${angle.key} · ${angle.label}</span>
   </div><div class="gen-cards">`;
 
-  sectionDefs.forEach((def, i) => {
-    const re = new RegExp(
-      `\\*\\*${def.key}[\\w（）()]*\\*\\*\\s*\\n([\\s\\S]*?)(?=\\n\\*\\*|$)`
-    );
-    const m = text.match(re);
-    const content = m ? m[1].trim() : '';
-    if (!content) return;
-    html += `<div class="gen-card" style="animation-delay:${i * 0.08}s">
-      <div class="gen-card-top">
-        <span>${def.icon}</span>
-        <span style="color:${gateColor}">${def.key}</span>
-      </div>
-      <div class="gen-card-body">${content.replace(/\n/g, '<br>')}</div>
-    </div>`;
-  });
+  if (matched.length) {
+    matched.forEach((s, i) => {
+      html += `<div class="gen-card" style="animation-delay:${i * 0.08}s">
+        <div class="gen-card-top"><span>${s.icon}</span><span style="color:${gateColor}">${s.label}</span></div>
+        <div class="gen-card-body">${s.content.replace(/\n/g, '<br>')}</div>
+      </div>`;
+    });
+  } else {
+    const fmt = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+    html += `<div class="gen-card"><div class="gen-card-body">${fmt}</div></div>`;
+  }
 
   html += `</div>
   <button class="gen-copy" onclick="genCopyAll(this)">複製全部文案 ↗</button>
