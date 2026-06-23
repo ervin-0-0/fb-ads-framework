@@ -24,7 +24,11 @@ app.post('/api/ai', async (req, res) => {
       {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(req.body)
+        body: JSON.stringify({
+          ...req.body,
+          generationConfig: { ...req.body.generationConfig, maxOutputTokens: 4096 },
+          thinkingConfig: { thinkingBudget: 0 }
+        })
       }
     );
     const data = await upstream.json();

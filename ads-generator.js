@@ -17,6 +17,17 @@ const GEN_AUDIENCES = [
   }
 ];
 
+// Keywords that identify real section headers (prevents **bold** in body from being misread)
+const HEADER_KEYWORDS = ['廣告標題', '廣告正文', '行動呼籲', '素材', '視覺'];
+
+const ICON_MAP = [
+  ['廣告標題', '📌'],
+  ['廣告正文', '📝'],
+  ['行動呼籲', '🎯'],
+  ['素材',     '🎬'],
+  ['視覺',     '🖼'],
+];
+
 function initAdsGenerator({ containerId, gate, gateName, gateColor, angles }) {
   const el = document.getElementById(containerId);
   if (!el) return;
@@ -118,24 +129,15 @@ ${angle.desc ? `切角說明：${angle.desc}` : ''}
 一句話具體描述畫面中要出現什麼人、什麼物件、什麼場景`;
 }
 
-function renderOutput(text, gateColor, audience, angle) {
-  const SECTION_MAP = [
-    { match: '廣告標題', label: '廣告標題', icon: '📌' },
-    { match: '廣告正文', label: '廣告正文', icon: '📝' },
-    { match: '行動呼籲', label: '行動呼籲 CTA', icon: '🎯' },
-    { match: '素材格式', label: '推薦素材格式', icon: '🎬' },
-    { match: '視覺方向', label: '視覺方向', icon: '🖼' },
-  ];
-
-  // Only lines whose **header** contains a known keyword are treated as section headers.
-  // Lines starting with **bold** in body text (e.g. **穀物茶**) are kept as content.
+function parseSections(text) {
   const lines = text.split('\n');
   const sections = [];
   let cur = null;
   lines.forEach(line => {
     const m = line.match(/^\*\*(.+?)\*\*/);
-    const isKnownHeader = m && SECTION_MAP.some(def => m[1].includes(def.match));
-    if (isKnownHeader) {
+    // Only treat as a section header if the bold text contains a known keyword
+    const isHeader = m && HEADER_KEYWORDS.some(k => m[1].includes(k));
+    if (isHeader) {
       if (cur) sections.push(cur);
       const sameLineRest = line.replace(/^\*\*.+?\*\*\s*/, '').trim();
       cur = { header: m[1].trim(), lines: sameLineRest ? [sameLineRest] : [] };
@@ -144,12 +146,11 @@ function renderOutput(text, gateColor, audience, angle) {
     }
   });
   if (cur) sections.push(cur);
+  return sections.filter(s => s.lines.join('').trim());
+}
 
-  const matched = SECTION_MAP.map(def => {
-    const sec = sections.find(s => s.header.includes(def.match));
-    const content = sec ? sec.lines.join('\n').trim() : '';
-    return { ...def, content };
-  }).filter(s => s.content);
+function renderOutput(text, gateColor, audience, angle) {
+  const sections = parseSections(text);
 
   let html = `<div class="gen-meta" style="--gc:${gateColor}">
     <span>${audience.label}</span>
@@ -157,14 +158,21 @@ function renderOutput(text, gateColor, audience, angle) {
     <span>切角 ${angle.key} · ${angle.label}</span>
   </div><div class="gen-cards">`;
 
-  if (matched.length) {
-    matched.forEach((s, i) => {
+  if (sections.length) {
+    sections.forEach((s, i) => {
+      // Strip inline **bold** markers from content, convert newlines to <br>
+      const content = s.lines.join('\n').trim()
+        .replace(/\*\*([^*]+)\*\*/g, '$1')
+        .replace(/\n/g, '<br>');
+      const iconEntry = ICON_MAP.find(([k]) => s.header.includes(k));
+      const icon = iconEntry ? iconEntry[1] : '•';
       html += `<div class="gen-card" style="animation-delay:${i * 0.08}s">
-        <div class="gen-card-top"><span>${s.icon}</span><span style="color:${gateColor}">${s.label}</span></div>
-        <div class="gen-card-body">${s.content.replace(/\n/g, '<br>')}</div>
+        <div class="gen-card-top"><span>${icon}</span><span style="color:${gateColor}">${s.header}</span></div>
+        <div class="gen-card-body">${content}</div>
       </div>`;
     });
   } else {
+    // Fallback: render everything as one card with basic formatting
     const fmt = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
     html += `<div class="gen-card"><div class="gen-card-body">${fmt}</div></div>`;
   }
