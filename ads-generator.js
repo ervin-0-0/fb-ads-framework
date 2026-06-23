@@ -68,7 +68,7 @@ async function runGenerator(gate, gateName, gateColor, angles) {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
         contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { temperature: 0.85, maxOutputTokens: 1200 }
+        generationConfig: { temperature: 0.85, maxOutputTokens: 2048 }
       })
     });
     const data = await res.json();
@@ -92,38 +92,39 @@ function buildPrompt(gate, gateName, audience, angle) {
 【品牌理念】把養生，過成日常的儀式。好好生活，從每天一杯開始。
 
 ===
-廣告門：Gate · ${gateName}門（消費者旅程：認識→互動→購買→重購→分享）
+廣告門：Gate · ${gateName}門
 目標受眾：${audience.label}
 受眾說明：${audience.desc}
 素材切角：${angle.key} · ${angle.label}
 ${angle.desc ? `切角說明：${angle.desc}` : ''}
 ===
 
-請生成一組完整的 Facebook 廣告文案草稿，嚴格按照以下格式輸出：
+請生成一組完整的 Facebook 廣告文案草稿。
+嚴格按照下列格式輸出，每個粗體標題單獨一行，內容直接寫在下一行，不要加說明括號：
 
 **廣告標題**
-（25字以內，直接切入受眾痛點或生活情境，讓人停止滑動）
+25字以內的標題，直接切入受眾痛點或生活情境
 
 **廣告正文**
-（80-120字。語氣像朋友說話，不要廣告腔。結構：情境代入 → 痛點共鳴 → 解決方案 → 品牌信任感）
+80-120字正文，語氣像朋友說話，不要廣告腔，結構：情境代入→痛點共鳴→解決方案→品牌信任感
 
-**行動呼籲 CTA**
-（5-8字）
+**行動呼籲**
+5-8字的行動呼籲句
 
-**推薦素材格式**
-（靜態圖 / 短影片 / 輪播圖，選一種，加一句說明選擇原因）
+**素材格式**
+靜態圖、短影片或輪播圖，選一種並說明原因
 
 **視覺方向**
-（一句話具體描述畫面：要出現什麼人、什麼物件、什麼場景）`;
+一句話具體描述畫面中要出現什麼人、什麼物件、什麼場景`;
 }
 
 function renderOutput(text, gateColor, audience, angle) {
   const SECTION_MAP = [
     { match: '廣告標題', label: '廣告標題', icon: '📌' },
     { match: '廣告正文', label: '廣告正文', icon: '📝' },
-    { match: '行動呼籲',  label: '行動呼籲 CTA', icon: '🎯' },
-    { match: '推薦素材',  label: '推薦素材格式', icon: '🎬' },
-    { match: '視覺方向',  label: '視覺方向', icon: '🖼' },
+    { match: '行動呼籲', label: '行動呼籲 CTA', icon: '🎯' },
+    { match: '素材格式', label: '推薦素材格式', icon: '🎬' },
+    { match: '視覺方向', label: '視覺方向', icon: '🖼' },
   ];
 
   // Line-by-line parser — tolerates any trailing text after **Header**
