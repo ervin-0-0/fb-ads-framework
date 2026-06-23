@@ -127,13 +127,15 @@ function renderOutput(text, gateColor, audience, angle) {
     { match: '視覺方向', label: '視覺方向', icon: '🖼' },
   ];
 
-  // Line-by-line parser — tolerates any trailing text after **Header**
+  // Only lines whose **header** contains a known keyword are treated as section headers.
+  // Lines starting with **bold** in body text (e.g. **穀物茶**) are kept as content.
   const lines = text.split('\n');
   const sections = [];
   let cur = null;
   lines.forEach(line => {
     const m = line.match(/^\*\*(.+?)\*\*/);
-    if (m) {
+    const isKnownHeader = m && SECTION_MAP.some(def => m[1].includes(def.match));
+    if (isKnownHeader) {
       if (cur) sections.push(cur);
       const sameLineRest = line.replace(/^\*\*.+?\*\*\s*/, '').trim();
       cur = { header: m[1].trim(), lines: sameLineRest ? [sameLineRest] : [] };
