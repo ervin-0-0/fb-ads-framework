@@ -26,8 +26,11 @@ app.post('/api/ai', async (req, res) => {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
           ...req.body,
-          generationConfig: { ...req.body.generationConfig, maxOutputTokens: 4096 },
-          thinkingConfig: { thinkingBudget: 0 }
+          generationConfig: {
+            ...req.body.generationConfig,
+            maxOutputTokens: 4096,
+            thinkingConfig: { thinkingBudget: 0 }
+          }
         })
       }
     );
