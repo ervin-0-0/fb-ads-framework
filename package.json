@@ -4,7 +4,8 @@
   "description": "臉書廣告投放標準流程 SOP 工作表",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "pull": "node scripts/pull-meta.js"
   },
   "dependencies": {
     "express": "^4.18.2"
